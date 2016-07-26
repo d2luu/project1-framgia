@@ -1,6 +1,7 @@
 *.rbc
 capybara-*.html
 .rspec
+/config/database.yml
 /log
 /tmp
 /db/*.sqlite3
