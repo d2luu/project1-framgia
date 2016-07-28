@@ -8,3 +8,17 @@ en:
     content_1: This is the home page for the
     content_2: "- Training Application." 
     link_to: Ruby on Rails Tutorial
+  session: 
+    remember: "Remember me on this computer"
+    set_type: "Set Type"
+  button: 
+    submit: "Submit"
+  admin:
+    new_user: "New User"
+  flash:
+    user_created: "User have been created"
+    user_notcreated: "Some thing go wrong"
+    not_admin: "Some thing go wrong. You are not admin"
+  error:
+    contain: "The form contain"
+    error: "error"
