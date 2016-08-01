@@ -2,7 +2,11 @@ en:
   home: Home
   welcome: Welcome to the Training System
   login: Login
+  logout: Logout
   news: News
+  profile: Profile
+  setting: Setting
+  account: Account
   static_pages:
     title: Training Framgia System
     content_1: This is the home page for the
@@ -22,3 +26,4 @@ en:
   error:
     contain: "The form contain"
     error: "error"
+    login: "Invalid email/password combination"
