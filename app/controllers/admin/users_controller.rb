@@ -24,6 +24,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def get_role
-    @roles = User.roles.reject {|a| a == "admin"}
+    @roles = User.roles.keys.reject {|a| a == "admin"}
   end
 end
