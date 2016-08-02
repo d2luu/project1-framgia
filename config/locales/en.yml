@@ -17,13 +17,20 @@ en:
     set_type: "Set Type"
   button: 
     submit: "Submit"
+    delete: "Delete"
   admin:
     new_user: "New User"
   flash:
     user_created: "User have been created"
     user_notcreated: "Some thing go wrong"
     not_admin: "Some thing go wrong. You are not admin"
+    delete_user: "User was deleted"
+    detele_user_fail: "User not found"
   error:
     contain: "The form contain"
     error: "error"
     login: "Invalid email/password combination"
+  index:
+    all_trainee: "All Trainees"
+    all_supervisor: "All Supervisors"
+  confirm_delete: "Are you sure?"
