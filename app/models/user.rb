@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   before_save {self.email = email.downcase}
 
   enum role: [:trainee, :supervisor, :admin]
+
+  def current_user? current_user
+    self == current_user
+  end 
 end

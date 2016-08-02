@@ -7,6 +7,7 @@ en:
   profile: Profile
   setting: Setting
   account: Account
+  login_warning: Please log in.
   static_pages:
     title: Training Framgia System
     content_1: This is the home page for the
@@ -20,12 +21,17 @@ en:
     delete: "Delete"
   admin:
     new_user: "New User"
+  user:
+    edit_user: "Edit user"
+    save_change: "Save changes"    
   flash:
     user_created: "User have been created"
     user_notcreated: "Some thing go wrong"
     not_admin: "Some thing go wrong. You are not admin"
     delete_user: "User was deleted"
     detele_user_fail: "User not found"
+    user_updated: "User have been updated"
+    user_notupdated: "Some thing go wrong"
   error:
     contain: "The form contain"
     error: "error"
@@ -34,3 +40,10 @@ en:
     all_trainee: "All Trainees"
     all_supervisor: "All Supervisors"
   confirm_delete: "Are you sure?"
+  form:
+    password_confirmation: "Password Confirmation"
+    name: "Name"
+    email: "Email"
+    password: "Password"
+    new_password: "New Password"
+    old_password: "Old Password"
