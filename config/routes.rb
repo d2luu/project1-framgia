@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, except: [:show, :update, :edit]
   end
+  resources :users, only: [:update, :edit, :show]
 end
