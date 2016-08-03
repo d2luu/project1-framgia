@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  before_action :logged_in_user
+  before_action :verify_admin
   before_action :get_role, only: [:new]
 
   def new
