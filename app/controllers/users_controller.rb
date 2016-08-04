@@ -19,11 +19,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def find_user
-    @user = User.find_by id: params[:id]
-    redirect_to root_url unless @user
-  end
-
   def user_params
     params.require(:user).permit :password, 
       :password_confirmation
@@ -31,5 +26,13 @@ class UsersController < ApplicationController
     
   def correct_user
     redirect_to root_url unless @user.current_user? current_user 
+  end
+
+  def find_user
+    @user = User.find_by id: params[:id]
+    if @user.nil?
+      flash[:danger] = t "flash.detele_user_fail"
+      redirect_to root_path
+    end
   end
 end
