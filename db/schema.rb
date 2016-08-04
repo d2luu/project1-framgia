@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160725090521) do
   create_table "course_subjects", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "subject_id"
-    t.integer  "status",     default: 0
+    t.integer  "status", default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160725090521) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.string   "title"
     t.string   "description"
     t.integer  "subject_id"
     t.datetime "created_at",  null: false
@@ -62,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160725090521) do
   create_table "user_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.integer  "status",     default: 0
+    t.integer  "status", default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -74,7 +75,7 @@ ActiveRecord::Schema.define(version: 20160725090521) do
     t.integer  "user_id"
     t.integer  "subject_id"
     t.integer  "user_course_id"
-    t.integer  "status",         default: 0
+    t.integer  "status", default: 0
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -99,7 +100,7 @@ ActiveRecord::Schema.define(version: 20160725090521) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "role",            default: 0
+    t.integer  "type", default: 0
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
