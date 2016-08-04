@@ -21,3 +21,19 @@ supervisor = User.create name: "super",
   password: "1",
   password_confirmation: "1",
   role: 1
+
+10.times do |s|
+  title = Faker::Name.name
+  description = Faker::Lorem.sentence
+  Subject.create! title: title, description: description,
+  tasks_attributes: [
+    {title:"Lesson 1", description: "lesson 1"},
+    {title:"Lesson 2", description: "lesson 2"},
+    {title:"Lesson 3", description: "lesson 3"},
+    {title:"Lesson 4", description: "lesson 4"}]
+end
+
+Course.create! title: "Web Development", description: "How to make a web app",
+  subject_ids: ["1","2"]
+Course.create! title: "App Development", description: "Flappy",
+  subject_ids: ["4","7"]
