@@ -73,3 +73,17 @@ en:
   tasks:
     title: "Task title"
     description: "Description"
+  courses:
+    created: "Course have been created"
+    updated: "Updated course success"
+    deleted: "Delete course success"
+    empty: "Course not found"
+    new: "Create"
+    edit: "Edit"
+    edit_title: "Edit course"
+    index: "Course"
+    create: "Create"
+  subjects:
+    show: "Subject list"
+  delete:
+    sure: "Sure???"

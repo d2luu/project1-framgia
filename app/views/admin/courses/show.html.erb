@@ -1,0 +1,18 @@
+<div class="col-md-6" id="course_container">
+  <h2><%= @course.title %></h2>
+  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
+  <h4><%= t "courses.subject" %></h4>
+    <% if @course.course_subjects.any? %>
+      <ol>
+        <% @course.course_subjects.each do |course_subject| %>
+          <li>
+            <%= link_to course_subject.subject.title, 
+              admin_course_course_subject_path(@course.id, course_subject) %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  <%= link_to t("button.delete"), admin_course_path,
+    method: :delete, data: {confirm: t("delete.sure")}, 
+    class: "btn btn-danger" %>
+</div>
