@@ -70,6 +70,7 @@ en:
     create_success: "Create success!"
     tasks: "Tasks"
     add_task: "Add more task"
+    title: "Subject: %{subject}"
   tasks:
     title: "Task title"
     description: "Description"
@@ -83,7 +84,5 @@ en:
     edit_title: "Edit course"
     index: "Course"
     create: "Create"
-  subjects:
-    show: "Subject list"
   delete:
     sure: "Sure???"

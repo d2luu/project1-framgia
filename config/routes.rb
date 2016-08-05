@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, except: [:update, :edit]
     resources :subjects
-    resources :courses
+    resources :courses do
+      resources :course_subjects, only: [:show]
+    end
   end
 end
