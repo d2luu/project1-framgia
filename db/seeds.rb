@@ -22,6 +22,24 @@ supervisor = User.create name: "super",
   password_confirmation: "1",
   role: 1
 
+100.times do |n|
+  name = "hung#{n}"
+  email = "hung#{n}@gmail.com"
+  password = "1"
+  User.create! name: name,
+    email: email,
+    password: password,
+    password_confirmation: password,
+    role: 0
+end
+
+users = User.all
+user = User.find_by id: 8
+following = users[9..61]
+followers = users[10..50]
+following.each {|followed| user.follow followed}
+followers.each {|follower| follower.follow user}
+
 10.times do |s|
   title = Faker::Name.name
   description = Faker::Lorem.sentence
