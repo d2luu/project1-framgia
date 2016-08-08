@@ -74,6 +74,17 @@ en:
   tasks:
     title: "Task title"
     description: "Description"
+  following: "following"
+  follower: "followers"
+  action:
+    follow: "follow"
+    unfollow: "unfollow"
+  view_profile: "View my profile"
+  relationship:
+    following: "following"
+    followers: "followers"
+    followed: "This user's already followed"
+    unfollowed: "This user isn't followed"
   courses:
     created: "Course have been created"
     updated: "Updated course success"
