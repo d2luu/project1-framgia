@@ -19,6 +19,7 @@ en:
   button: 
     submit: "Submit"
     delete: "Delete"
+    add_user: "Add user to course"
   admin:
     new_user: "New User"
   user:
@@ -38,6 +39,8 @@ en:
     confirm_delete: "Sure???"
     delete_fail: "Delete fail"
     delete_success: "Delete success"
+    removed_user: "Course updated"
+    remove_user_failed: "Remove fail"
   error:
     contain: "The form contain"
     error: "error"
@@ -95,5 +98,9 @@ en:
     edit_title: "Edit course"
     index: "Course"
     create: "Create"
+    cannot_edit: "Can't edit this course"
   delete:
     sure: "Sure???"
+  assign_users:
+    success: "Success update course"
+    fail: "Fail to update course"
