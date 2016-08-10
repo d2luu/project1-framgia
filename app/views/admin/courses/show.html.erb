@@ -1,3 +1,25 @@
+<div class="col-md-4" id="user_course">
+  <div>
+    <h2><%= t "title.supervisor" %></h2>
+    <% @supervisors.each do |supervisor| %>
+      <div>
+        <div id="user_name">
+          <%= supervisor.user.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <h2><%= t "title.trainee" %></h2>
+    <% @trainees.each do |trainee| %>
+      <div>
+        <div id="user_name">
+          <%= trainee.user.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <div class="col-md-6" id="course_container">
   <h2><%= @course.title %></h2>
   <h4><%= t "courses.description" %> : <%= @course.description %></h4>
