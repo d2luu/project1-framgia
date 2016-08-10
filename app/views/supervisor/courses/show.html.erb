@@ -1,0 +1,49 @@
+<div class="col-md-4" id="user_course">
+  <div>
+    <h2><%= t "title.supervisor" %></h2>
+    <% @supervisors.each do |supervisor| %>
+      <div>
+        <div id="user_name">
+          <%= supervisor.user.name %>
+        </div>
+        <div id="remove_button">
+          <%= link_to t("button.delete"), 
+            supervisor_user_course_path(supervisor), method: :delete,  
+            data: {confirm: t("flash.confirm_delete")}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <h2><%= t "title.trainee" %></h2>
+    <% @trainees.each do |trainee| %>
+      <div>
+        <div id="user_name">
+          <%= trainee.user.name %>
+        </div>
+        <div id="remove_button">
+          <%= link_to t("button.delete"), 
+            supervisor_user_course_path(trainee), method: :delete,  
+            data: {confirm: t("flash.confirm_delete")}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="col-md-6" id="course_container">
+  <h2><%= @course.title %></h2>
+  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
+  <h4><%= t "courses.subject" %></h4>
+    <% if @course.course_subjects.any? %>
+      <ol>
+        <% @course.course_subjects.each do |course_subject| %>
+          <li>
+            <%= link_to course_subject.subject.title, 
+              supervisor_course_course_subject_path(@course.id, course_subject) %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  <%= link_to t("button.add_user"), edit_supervisor_assign_user_path,
+    class: "btn btn-primary" if @course.incoming? %>
+</div>

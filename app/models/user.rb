@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
 
   enum role: [:trainee, :supervisor, :admin]
 
+  scope :availble_user, ->course_status{where "id NOT IN 
+    (SELECT user_id FROM user_courses WHERE 
+    course_id IN (SELECT id FROM courses WHERE status == ?))", course_status}
+
   def current_user? current_user
     self == current_user
   end
