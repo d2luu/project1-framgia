@@ -1,0 +1,7 @@
+<%= form_for [:admin, @course], 
+  url: admin_assign_supervisor_path do |f| %>
+  <%= f.collection_select :owner_id, @supervisors, :id, :name %>
+  <div class="text-center">
+    <%= f.submit t("button.submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

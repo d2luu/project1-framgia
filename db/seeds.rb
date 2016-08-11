@@ -70,8 +70,8 @@ UserCourse.create! user_id: 2, course_id: 1
 UserCourse.create! user_id: 3, course_id: 1
 UserCourse.create! user_id: 4, course_id: 1
 UserCourse.create! user_id: 12, course_id: 1
-UserCourse.create! user_id: 13, course_id: 2, status: 1
-UserCourse.create! user_id: 14, course_id: 2, status: 1
-UserCourse.create! user_id: 5, course_id: 2, status: 1
-UserCourse.create! user_id: 6, course_id: 2, status: 1
-UserCourse.create! user_id: 7, course_id: 2, status: 1
+UserCourse.create! user_id: 13, course_id: 2
+UserCourse.create! user_id: 14, course_id: 2
+UserCourse.create! user_id: 5, course_id: 2
+UserCourse.create! user_id: 6, course_id: 2
+UserCourse.create! user_id: 7, course_id: 2

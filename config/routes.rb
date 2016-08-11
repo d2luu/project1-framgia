@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :courses do
       resources :course_subjects, only: :show
     end
+    resources :assign_supervisors, only: [:update, :edit]
   end
   namespace :supervisor do
     resources :courses, only: [:index, :show] do
