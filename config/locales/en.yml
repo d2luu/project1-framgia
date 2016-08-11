@@ -104,3 +104,4 @@ en:
   assign_users:
     success: "Success update course"
     fail: "Fail to update course"
+    owned: "This course had owner"
