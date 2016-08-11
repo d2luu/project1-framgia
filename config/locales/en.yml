@@ -21,8 +21,16 @@ en:
     delete: "Delete"
     add_user: "Add user to course"
   admin:
-    new_user: "New User"
+    new_user: "New user"
+    all_user: "All users"
+    new_course: "New course"
+    all_course: "All courses"
+    new_subject: "New subject"
+    all_subject: "All subjects"
   user:
+    user: "User"
+    course: "Course"
+    subject: "Subject"
     edit_user: "Edit user"
     save_change: "Save changes"    
   flash:
