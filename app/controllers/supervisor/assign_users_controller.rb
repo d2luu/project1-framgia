@@ -17,6 +17,8 @@ class Supervisor::AssignUsersController < ApplicationController
 
   private
   def user_course_params
+    params[:course][:user_ids].push current_user.id
+    params[:course][:user_ids].push @course.owner_id
     params.require(:course).permit user_ids: []
   end
 

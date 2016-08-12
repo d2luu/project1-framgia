@@ -1,7 +1,7 @@
 class Supervisor::CoursesController < ApplicationController
   before_action :logged_in_user
   before_action :verify_supervisor
-  before_action :find_course, only: :show
+  before_action :find_course, :verify_permission, only: :show
 
   def index
     @courses = Course.paginate page: params[:page], 
@@ -20,6 +20,14 @@ class Supervisor::CoursesController < ApplicationController
     if @course.nil?
       flash[:danger] = t "courses.empty"
       redirect_to root_url
+    end
+  end
+
+  def verify_permission
+    unless UserCourse.find_by user_id: current_user.id,
+      course_id: @course.id
+      flash[:danger] = t "courses.not_in_course"
+      redirect_to supervisor_courses_path
     end
   end
 end

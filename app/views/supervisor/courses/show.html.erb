@@ -7,9 +7,11 @@
           <%= supervisor.user.name %>
         </div>
         <div id="remove_button">
-          <%= link_to t("button.delete"), 
-            supervisor_user_course_path(supervisor), method: :delete,  
-            data: {confirm: t("flash.confirm_delete")}, class: "btn btn-danger" %>
+          <% if supervisor.user_id != current_user.id  and supervisor.user_id != @course.owner_id %>
+            <%= link_to t("button.delete"), 
+              supervisor_user_course_path(supervisor), method: :delete,  
+              data: {confirm: t("flash.confirm_delete")}, class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
     <% end %>
