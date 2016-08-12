@@ -28,12 +28,15 @@ en:
     new_subject: "New subject"
     all_subject: "All subjects"
   user:
+    courses_index: "Your Courses"
     user: "User"
     course: "Course"
     subject: "Subject"
     edit_user: "Edit user"
     save_change: "Save changes"    
   flash:
+    course_not_found: "Course was deleted"
+    course_not_started: "Course not active"
     user_created: "User have been created"
     user_notcreated: "Some thing go wrong"
     not_admin: "Some thing go wrong. You are not admin"
