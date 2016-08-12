@@ -53,6 +53,7 @@ en:
     contain: "The form contain"
     error: "error"
     login: "Invalid email/password combination"
+    delete_user_error: "Unable to delete yourself"
   index:
     all_trainee: "All Trainees"
     all_supervisor: "All Supervisors"
@@ -107,6 +108,7 @@ en:
     index: "Course"
     create: "Create"
     cannot_edit: "Can't edit this course"
+    not_in_course: "You don't have permission in this course"
   delete:
     sure: "Sure???"
   assign_users:
