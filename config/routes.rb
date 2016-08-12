@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update] do
     resources :relationships, only: :index
+    resources :courses, only: [:index, :show]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :courses, only: [:index, :show]
 end

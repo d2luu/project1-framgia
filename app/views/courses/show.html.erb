@@ -1,0 +1,36 @@
+<div class="col-md-4" id="user_course">
+  <div>
+    <h2><%= t "title.supervisor" %></h2>
+    <% @supervisors.each do |supervisor| %>
+      <div>
+        <div id="user_name">
+          <%= link_to supervisor.name, user_path(supervisor) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <h2><%= t "title.trainee" %></h2>
+    <% @trainees.each do |trainee| %>
+      <div>
+        <div id="user_name">
+          <%= link_to trainee.name, user_path(trainee) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="col-md-6" id="course_container">
+  <h2><%= @course.title %></h2>
+  <h4><%= t "courses.description" %> : <%= @course.description %></h4>
+  <h4><%= t "courses.subject" %></h4>
+  <% if @course.course_subjects.any? %>
+    <ol>
+      <% @course.course_subjects.each do |course_subject| %>
+        <li>
+          <%= course_subject.subject.title %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
