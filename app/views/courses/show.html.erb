@@ -28,7 +28,9 @@
     <ol>
       <% @course.course_subjects.each do |course_subject| %>
         <li>
-          <%= course_subject.subject.title %>
+          <%= link_to course_subject.subject.title, 
+            user_course_course_subject_path(@current_user.id, @course.id, 
+            course_subject.subject) %>
         </li>
       <% end %>
     </ol>

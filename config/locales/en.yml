@@ -33,7 +33,7 @@ en:
     course: "Course"
     subject: "Subject"
     edit_user: "Edit user"
-    save_change: "Save changes"    
+    save_change: "Save changes"
   flash:
     course_not_found: "Course was deleted"
     course_not_started: "Course not active"
@@ -86,9 +86,12 @@ en:
     tasks: "Tasks"
     add_task: "Add more task"
     title: "Subject: %{subject}"
+    not_started: "Subject not started"
+    not_found: "Subject not found"
   tasks:
     title: "Task title"
     description: "Description"
+    finish: "Finish"
   following: "following"
   follower: "followers"
   action:
