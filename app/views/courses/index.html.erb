@@ -4,7 +4,8 @@
   <% if @courses.any? %>
     <% @courses.each do |course| %>
       <div>
-        <h2><%= link_to course.title, course_path(course) %></h2>
+        <h2><%= link_to course.title, 
+          user_course_path(@current_user.id, course) %></h2>
         <h4><%= t "courses.description" %> : <%= course.description %></h4>
       </div>
     <% end %>
