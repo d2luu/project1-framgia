@@ -20,6 +20,9 @@ en:
     submit: "Submit"
     delete: "Delete"
     add_user: "Add user to course"
+    start: "Start"
+    finish: "Finish"
+    finished: "Finished"
   admin:
     new_user: "New user"
     all_user: "All users"
@@ -52,6 +55,9 @@ en:
     delete_success: "Delete success"
     removed_user: "Course updated"
     remove_user_failed: "Remove fail"
+    course_updated: "Course Updated"
+    course_update_fail: "Course fails update"
+    confirm_finish: "Are you sure finish this coures?"
   error:
     contain: "The form contain"
     error: "error"
@@ -115,6 +121,7 @@ en:
     create: "Create"
     cannot_edit: "Can't edit this course"
     not_in_course: "You don't have permission in this course"
+    finished: "This course's already finished"
   delete:
     sure: "Sure???"
   assign_users:

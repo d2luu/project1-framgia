@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   namespace :supervisor do
     resources :courses, only: [:index, :show] do
       resources :course_subjects, only: :show
+      resource :active_courses, only: :update
     end
     resources :user_courses, only: :destroy
     resources :assign_users, only: [:edit, :update]
