@@ -24,9 +24,8 @@ class Admin::CoursesController < ApplicationController
   end
 
   def show
-    @user_courses = @course.user_courses
-    @supervisors = @user_courses.supervisors
-    @trainees = @user_courses.trainees
+    @supervisors = @course.users.supervisor
+    @trainees = @course.users.trainee
   end
 
   def edit

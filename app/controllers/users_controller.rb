@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :find_user, only: [:show, :edit, :update]
-  before_action :correct_user, only: [:edit, :update] 
+  before_action :correct_user, only: [:edit, :update]
 
   def show
+    @relationship = if current_user.following? @user
+      current_user.active_relationships.find_by followed_id: @user.id
+    else
+      current_user.active_relationships.build
+    end
   end
   
   def edit

@@ -4,7 +4,7 @@
     <% @supervisors.each do |supervisor| %>
       <div>
         <div id="user_name">
-          <%= supervisor.user.name %>
+          <%= link_to supervisor.name, user_path(supervisor) %>
         </div>
       </div>
     <% end %>
@@ -14,7 +14,7 @@
     <% @trainees.each do |trainee| %>
       <div>
         <div id="user_name">
-          <%= trainee.user.name %>
+          <%= link_to trainee.name, user_path(trainee) %>
         </div>
       </div>
     <% end %>
