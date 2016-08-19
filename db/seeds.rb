@@ -64,3 +64,6 @@ UserCourse.create! user_id: 14, course_id: 2
 UserCourse.create! user_id: 5, course_id: 2
 UserCourse.create! user_id: 6, course_id: 2
 UserCourse.create! user_id: 7, course_id: 2
+
+course_subjects = CourseSubject.all
+course_subjects[1..3].each {|course_subject| course_subject.update_attribute :status, 1}
