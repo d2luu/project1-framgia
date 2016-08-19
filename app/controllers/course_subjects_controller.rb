@@ -17,13 +17,16 @@ class CourseSubjectsController < ApplicationController
   end
 
   def started_subject?
-    flash[:danger] = t "subjects.not_started"
-    redirect_to root_path unless @course_subject.started?
+    unless @course_subject.started?
+      redirect_to :back
+      flash[:danger] = t "subjects.not_started"
+    end
   end
   
   def course_of_trainee?
-    flash[:danger] = t "courses.not_in_course"
-    redirect_to root_url unless current_user.courses.include? 
-      @course_subject.course
+    unless current_user.courses.include? @course_subject.course
+      redirect_to :back
+      flash[:danger] = t "courses.not_in_course"
+    end
   end
 end
