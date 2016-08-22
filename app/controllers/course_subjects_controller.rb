@@ -43,21 +43,21 @@ class CourseSubjectsController < ApplicationController
     @course_subject = CourseSubject.find_by id: params[:id]
     if @course_subject.nil?
       flash[:danger] = t "subjects.not_found"
-      redirect_to root_path
+      redirect_to courses_path
     end
   end
 
   def started_subject?
     unless @course_subject.started?
-      redirect_to :back
       flash[:danger] = t "subjects.not_started"
+      redirect_to :back
     end
   end
   
   def course_of_trainee?
     unless current_user.courses.include? @course_subject.course
-      redirect_to :back
       flash[:danger] = t "courses.not_in_course"
+      redirect_to root_url 
     end
   end
 end

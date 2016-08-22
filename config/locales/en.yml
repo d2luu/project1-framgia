@@ -58,6 +58,8 @@ en:
     course_updated: "Course Updated"
     course_update_fail: "Course fails update"
     confirm_finish: "Are you sure finish this coures?"
+    course_not_actived: "Course not actived"
+    subject_started: "Subject started success"
   error:
     contain: "The form contain"
     error: "error"
