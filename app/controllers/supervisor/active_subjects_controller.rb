@@ -1,5 +1,5 @@
 class Supervisor::ActiveSubjectsController < ApplicationController
-  before_action :logged_in_user, :verify_supervisor, :verify_actived_course
+  before_action :logged_in_user, :verify_supervisor, :verify_actived_course, :find_subject
    
   def update
     if @subject.update_attributes status: params[:status]
