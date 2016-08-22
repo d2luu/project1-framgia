@@ -7,14 +7,6 @@
 <div class="col-xs-12 col-md-6">
   <h3><%= t "subjects.tasks" %> (<%= @subject.tasks.count %>)</h3>
   <ol>
-    <% @subject.tasks.each do |task| %>
-      <li>
-        <strong><%= task.title %></strong>
-        |
-        <%= task.description %>
-        <br>
-        <%= submit_tag t("tasks.finish"), class: "btn btn-primary" %>
-      </li>
-    <% end %>
+    <%= render "task" %>
   </ol>
 </div>

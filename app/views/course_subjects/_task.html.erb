@@ -1,0 +1,21 @@
+<% @subject.tasks.each do |task| %>
+  <li>
+    <strong><%= task.title %></strong>
+    |
+    <%= task.description %>
+    <br>
+    <% if finished_task? @subject, task %>
+      <div class="col-md-6" id="course_container">
+        <%= link_to t("button.finished"), user_course_path,
+          class: "btn btn-danger" %>
+      </div>
+    <% else %> 
+      <div class="col-md-6" id="course_container">
+        <%= link_to t("button.finish"), user_course_course_subject_path(
+          @current_user.id, @course.id, 
+          @course_subject, task_id: task.id),
+          method: :patch, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </li>
+<% end %>

@@ -26,4 +26,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end 
   end
+
+  def verify_trainee
+    unless current_user.trainee?
+      flash[:danger] = t "flash.not_supervisor"
+      redirect_to root_path
+    end 
+  end
 end
