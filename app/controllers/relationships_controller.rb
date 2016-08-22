@@ -13,6 +13,8 @@ class RelationshipsController < ApplicationController
       flash[:danger] = t "relationship.followed"
     else
       current_user.follow @user
+      @relationship = current_user.active_relationships
+        .find_by followed_id: @user.id
       flash.clear
     end
     respond_to do |format|
@@ -22,6 +24,7 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
+    @relationship = current_user.active_relationships.build
     if Relationship.find_by(id: params[:id]).nil?
       flash[:danger] = t "relationship.unfollowed"
     else
