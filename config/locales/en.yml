@@ -97,7 +97,10 @@ en:
   tasks:
     title: "Task title"
     description: "Description"
-    finish: "Finish"
+    finish_fail: "Can't finish this task"
+    finish_success: "Finish Successfully"
+    permission: "You can't finish this task"
+    finished: "finished"
   following: "following"
   follower: "followers"
   action:
