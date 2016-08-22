@@ -1,0 +1,7 @@
+<%= form_for @relationship, html: {method: :delete}, remote: true do |f| %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <div><%= hidden_field_tag :followed_id, @user.id %></div>
+  <%= f.submit t("action.unfollow"), class: "btn btn-danger" %>
+<% end %>

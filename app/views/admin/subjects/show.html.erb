@@ -1,0 +1,25 @@
+<% provide :title, t("subjects.show") %>
+<div class="col-xs-6 col-md-4 text-center">
+  <h1><%= @subject.title %></h1>
+  <h3><%= @subject.description %></h3>
+  <%= link_to t("subjects.edit"), edit_admin_subject_path(@subject),
+    class: "btn btn-success" %>
+  <%= link_to t("subjects.index"), admin_subjects_path,
+    class: "btn btn-success" %>
+  <%= link_to t("subjects.delete"), admin_subject_path, method: :delete,
+    data: {confirm: t("flash.confirm_delete")}, class: "btn btn-danger" %>
+</div>
+<div class="col-xs-12 col-md-8">
+<h3><%= t "subjects.tasks" %> (<%= @subject.tasks.count %>)</h3>
+  <% if @subject.tasks.any? %>
+    <ol>
+      <% @subject.tasks.all.each do |task| %>
+        <li>
+          <strong><%= task.title %></strong>
+          |
+          <%= task.description %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>

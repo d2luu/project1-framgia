@@ -1,0 +1,12 @@
+<% if @course.incoming? %>
+  <%= link_to t("button.start"),
+    supervisor_course_active_courses_path(@course, status: :started),
+    method: :patch, class: "btn btn-primary" %>
+<% elsif @course.started? %>
+  <%= link_to t("button.finish"),
+    supervisor_course_active_courses_path(@course, status: :finished),
+    data: {confirm: t("flash.confirm_finish")},
+    method: :patch, class: "btn btn-success" %>
+<% else %>
+  <p><%= t "courses.finished" %></p>
+<% end %>

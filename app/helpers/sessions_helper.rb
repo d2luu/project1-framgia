@@ -19,4 +19,9 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  def is_owner? supervisor, course
+    supervisor.user == current_user or
+      supervisor.user_id == course.owner_id
+  end
 end

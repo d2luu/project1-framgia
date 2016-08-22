@@ -1,0 +1,28 @@
+<%= form_for [:supervisor, @course], 
+  url: supervisor_assign_user_path do |f| %>
+  <div class="form-style-5">
+    <form>
+      <fieldset class="col-md-6">
+        <legend>
+          <span class="number">1</span> 
+          <%= t "title.supervisor" %>
+        </legend>
+        <%= f.collection_check_boxes :user_ids, @supervisors, 
+          :id, :name do |s| %>
+          <%= render "checkbox", s: s %>
+        <% end %>
+      </fieldset>
+      <fieldset class="col-md-6">
+        <legend>
+          <span class="number">2</span>
+          <%= t "title.trainee" %>
+        </legend>
+        <%= f.collection_check_boxes :user_ids, @trainees, 
+          :id, :name do |s| %>
+          <%= render "checkbox", s: s %> 
+        <% end %>
+      </fieldset>
+      <%= f.submit t("button.submit"), class: "btn btn-primary" %>
+    </form>
+  </div>
+<% end %>

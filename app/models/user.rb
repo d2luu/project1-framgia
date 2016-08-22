@@ -26,7 +26,23 @@ class User < ActiveRecord::Base
 
   enum role: [:trainee, :supervisor, :admin]
 
+  scope :availble_user, ->course_status{where "id NOT IN 
+    (SELECT user_id FROM user_courses WHERE 
+    course_id IN (SELECT id FROM courses WHERE status == ?))", course_status}
+
   def current_user? current_user
     self == current_user
-  end 
+  end
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def unfollow other_user
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
 end
