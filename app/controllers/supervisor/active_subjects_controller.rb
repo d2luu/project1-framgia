@@ -1,9 +1,11 @@
 class Supervisor::ActiveSubjectsController < ApplicationController
-  before_action :logged_in_user, :verify_supervisor, :verify_actived_course, :find_subject
+  before_action :logged_in_user, :verify_supervisor
+  before_action :find_subject, :verify_actived_course
    
   def update
     if @subject.update_attributes status: params[:status]
       flash[:success] = t "flash.subject_started"
+      @subject.create_user_subject
     else
       flash[:danger] = t "flash.subject_failed"
     end
@@ -12,7 +14,7 @@ class Supervisor::ActiveSubjectsController < ApplicationController
 
   private
   def verify_actived_course
-    @course = Course.find_by id: params[:course_id]
+    @course = Course.find_by id: @subject.course_id
     unless @course.started?
       flash[:danger] = t "flash.course_not_actived"
       redirect_to [:supervisor, @course]

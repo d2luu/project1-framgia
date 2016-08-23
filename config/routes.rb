@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   end
   namespace :supervisor do
     resources :courses, only: [:index, :show] do
-      resources :course_subjects, only: :show do
-        resources :active_subjects, only: :update
-      end
       resource :active_courses, only: :update
+    end
+    resources :course_subjects, only: :show do
+      resources :active_subjects, only: :update
     end
     resources :user_courses, only: :destroy
     resources :assign_users, only: [:edit, :update]
