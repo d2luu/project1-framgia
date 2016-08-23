@@ -6,4 +6,5 @@ class UserCourse < ActiveRecord::Base
 
   scope :supervisors, -> {joins(:user).where users: {role: "1"}}
   scope :trainees, -> {joins(:user).where users: {role: "0"}}
+  scope :user_courses, -> id{where(course_id: id)}
 end

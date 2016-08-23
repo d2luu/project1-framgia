@@ -1,16 +1,15 @@
 <% if @course_subject.incoming? %>
   <%= link_to t("button.start"),
-    supervisor_course_course_subject_active_subject_path(
-    course_id: @course_subject.course_id,
-    course_subject_id: @course_subject.id, status: :started),
-    method: :patch, class: "btn btn-primary" %>
+    supervisor_course_subject_active_subject_path(
+      course_subject_id: @course_subject.id, status: :started),
+      method: :patch, class: "btn btn-primary" %>
 <% elsif @course_subject.started? %>
   <%= link_to t("button.finish"),
-    supervisor_course_course_subject_active_subject_path(
-    course_id: @course_subject.course_id,
-    course_subject_id: @course_subject.id, status: :finished),
-    method: :patch, class: "btn btn-success" %>
+    supervisor_course_subject_active_subject_path(
+      course_subject_id: @course_subject.id, status: :finished),
+      method: :patch, class: "btn btn-success" %>
 <% else %>
-  <%= link_to t("button.finished"), supervisor_course_course_subject_path,
+  <%= link_to t("button.finished"),
+    supervisor_course_path(@course_subject.course_id),
     class: "btn btn-danger" %>
 <% end %>

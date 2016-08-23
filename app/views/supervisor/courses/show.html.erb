@@ -43,7 +43,7 @@
       <% @course.course_subjects.each do |course_subject| %>
         <li>
           <%= link_to course_subject.subject.title, 
-            supervisor_course_course_subject_path(@course.id, course_subject) %>
+            supervisor_course_subject_path(course_subject) %>
         </li>
       <% end %>
     </ol>
