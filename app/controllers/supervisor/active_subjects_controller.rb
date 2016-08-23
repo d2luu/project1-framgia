@@ -5,7 +5,7 @@ class Supervisor::ActiveSubjectsController < ApplicationController
   def update
     if @subject.update_attributes status: params[:status]
       flash[:success] = t "flash.subject_updated"
-      @subject.create_user_subject
+      create_user_subject
     else
       flash[:danger] = t "flash.subject_failed"
     end
@@ -27,5 +27,9 @@ class Supervisor::ActiveSubjectsController < ApplicationController
       flash[:danger] = t "subjects.not_found"
       redirect_to :back
     end
+  end
+
+  def create_user_subject
+    @subject.create_user_subject if @subject.started?
   end
 end
