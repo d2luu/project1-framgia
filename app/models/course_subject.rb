@@ -4,7 +4,6 @@ class CourseSubject < ActiveRecord::Base
   belongs_to :course
   belongs_to :subject
 
-  private
   def create_user_subject
     UserCourse.user_courses(self.course_id).each do |user_course|
       UserSubject.create user_id: user_course.user_id,
