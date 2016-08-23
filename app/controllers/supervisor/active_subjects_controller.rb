@@ -4,7 +4,7 @@ class Supervisor::ActiveSubjectsController < ApplicationController
    
   def update
     if @subject.update_attributes status: params[:status]
-      flash[:success] = t "flash.subject_started"
+      flash[:success] = t "flash.subject_updated"
       @subject.create_user_subject
     else
       flash[:danger] = t "flash.subject_failed"

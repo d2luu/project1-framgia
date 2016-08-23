@@ -59,7 +59,7 @@ en:
     course_update_fail: "Course fails update"
     confirm_finish: "Are you sure finish this coures?"
     course_not_actived: "Course not actived"
-    subject_started: "Subject started success"
+    subject_updated: "Subject updated success"
   error:
     contain: "The form contain"
     error: "error"
@@ -94,7 +94,7 @@ en:
     tasks: "Tasks"
     add_task: "Add more task"
     title: "Subject: %{subject}"
-    not_started: "Subject not started"
+    not_started: "Subject not actived"
     not_found: "Subject not found"
   tasks:
     title: "Task title"
