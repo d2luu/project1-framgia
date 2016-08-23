@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
   def show      
     @supervisors = @course.users.supervisor
     @trainees = @course.users.trainee
-    if @course.incoming?
+    unless @course.started?
       flash[:danger] = t "flash.course_not_started"
       redirect_to courses_path
     end

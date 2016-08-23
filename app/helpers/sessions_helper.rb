@@ -25,9 +25,7 @@ module SessionsHelper
       supervisor.user_id == course.owner_id
   end
 
-  def finished_task? subject, task
-    user_subject = current_user.user_subjects.find_by subject.id
-    current_user.user_tasks.exists? task_id: task.id,
-      user_subject_id: user_subject.id
+  def finished_task? task
+    current_user.user_tasks.exists? task_id: task.id
   end
 end

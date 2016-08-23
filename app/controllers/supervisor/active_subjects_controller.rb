@@ -1,6 +1,6 @@
 class Supervisor::ActiveSubjectsController < ApplicationController
   before_action :logged_in_user, :verify_supervisor
-  before_action :find_subject, :verify_actived_course
+  before_action :find_subject, :verify_actived_course, :finished_subject?
    
   def update
     if @subject.update_attributes status: params[:status]
@@ -31,5 +31,11 @@ class Supervisor::ActiveSubjectsController < ApplicationController
 
   def create_user_subject
     @subject.create_user_subject if @subject.started?
+  end
+
+  def finished_subject?
+    if @subject.finished?
+      redirect_to :back
+    end
   end
 end

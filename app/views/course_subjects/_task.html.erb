@@ -4,7 +4,7 @@
     |
     <%= task.description %>
     <br>
-    <% if finished_task? @subject, task %>
+    <% if finished_task? task %>
       <div class="col-md-6" id="course_container">
         <%= link_to t("button.finished"), user_course_path,
           class: "btn btn-danger" %>

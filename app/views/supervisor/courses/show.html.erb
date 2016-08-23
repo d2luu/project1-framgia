@@ -4,7 +4,7 @@
     <% @supervisors.each do |supervisor| %>
       <div>
         <div id="user_name">
-          <%= supervisor.user.name %>
+          <%= link_to supervisor.user.name, user_path(supervisor.user) %>
         </div>
         <div id="remove_button">
           <% unless is_owner? supervisor, @course %>
@@ -22,7 +22,7 @@
     <% @trainees.each do |trainee| %>
       <div>
         <div id="user_name">
-          <%= trainee.user.name %>
+          <%= link_to trainee.user.name, user_path(trainee.user) %>
         </div>
         <div id="remove_button">
           <%= link_to t("button.delete"), 
