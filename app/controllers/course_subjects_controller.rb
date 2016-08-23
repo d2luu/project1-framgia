@@ -50,7 +50,7 @@ class CourseSubjectsController < ApplicationController
   def started_subject?
     unless @course_subject.started?
       flash[:danger] = t "subjects.not_started"
-      redirect_to :back
+      redirect_to courses_path
     end
   end
   
